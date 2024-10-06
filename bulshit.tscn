@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://f6o8a6dww8bx"]
+[gd_scene load_steps=4 format=3 uid="uid://f6o8a6dww8bx"]
+
+[ext_resource type="Script" path="res://bulshit.gd" id="1_qv2xi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_18yc3"]
+albedo_color = Color(0.476743, 0.223202, 0.26402, 1)
+emission_enabled = true
+emission = Color(0, 0.435315, 0.276417, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jc6u4"]
+material = SubResource("StandardMaterial3D_18yc3")
 
 [node name="RigidBody3D" type="RigidBody3D"]
+script = ExtResource("1_qv2xi")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-6.47228e-06, -0.000661213, -0.0341753, -0.0346852, 0.000424381, 0, 0.000379528, 0.0387729, -0.000582812, 0, 0.0664875, 0.0438277)
