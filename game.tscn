@@ -1,10 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://bdhbrx6kft7dk"]
+[gd_scene load_steps=17 format=3 uid="uid://bdhbrx6kft7dk"]
 
 [ext_resource type="Script" path="res://character_body_3d.gd" id="1_8nwgt"]
 [ext_resource type="PackedScene" uid="uid://cwc7mxnrb7ucc" path="res://player_20.glb" id="2_8ihjr"]
 [ext_resource type="PackedScene" uid="uid://ccp2peicqqkhh" path="res://uploads_files_2787791_Mercedes+Benz+GLS+580.glb" id="3_vut4d"]
 [ext_resource type="PackedScene" uid="uid://hsuvc0q7lktx" path="res://building_01.glb" id="4_l1b4j"]
 [ext_resource type="PackedScene" uid="uid://cs4q3mkp70mjd" path="res://building_02.glb" id="5_yoeiy"]
+[ext_resource type="PackedScene" uid="uid://bpmm6rypsxpci" path="res://wooden watch tower.glb" id="6_s5x08"]
+[ext_resource type="PackedScene" uid="uid://cjf8sb0b32rue" path="res://building_03.glb" id="7_k50h2"]
+[ext_resource type="PackedScene" uid="uid://5c22q715h056" path="res://Gate Only.glb" id="8_5824q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hcoxm"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -18,7 +21,11 @@ background_mode = 2
 sky = SubResource("Sky_qxbl5")
 tonemap_mode = 2
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3svud"]
+albedo_color = Color(0.169097, 0.450633, 0, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_aeij1"]
+material = SubResource("StandardMaterial3D_3svud")
 size = Vector3(1, 1.02, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sa3cf"]
@@ -48,7 +55,7 @@ transform = Transform3D(840.21, 0, 0, 0, 2.02849, 0, 0, 0, 718.487, 0, 0, 0)
 mesh = SubResource("BoxMesh_aeij1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.36234, 2.78687, -0.518341)
+transform = Transform3D(0.999998, -4.88944e-09, 0, 0, 0.999998, -2.32831e-10, -2.23517e-08, 6.96673e-09, 1, 3.36234, 2.78687, -0.518341)
 shape = SubResource("BoxShape3D_sa3cf")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
@@ -99,11 +106,96 @@ shape = SubResource("BoxShape3D_op7je")
 [node name="building_01" parent="StaticBody3D2" instance=ExtResource("4_l1b4j")]
 transform = Transform3D(-4.2168, 0.00940245, 0.0493555, 0.00998273, 4.21679, 0.0495683, -0.0492412, 0.0496816, -4.21652, 185.816, 2.89872, 270.772)
 
+[node name="StaticBody3D2" type="StaticBody3D" parent="StaticBody3D2"]
+transform = Transform3D(1, -4.65661e-10, 0, 0, 1, -2.32831e-10, -1.86265e-09, 4.62023e-10, 1, 133.062, -0.322204, 2.16468)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2/StaticBody3D2"]
+
+[node name="building_01" parent="StaticBody3D2/StaticBody3D2" instance=ExtResource("4_l1b4j")]
+transform = Transform3D(-4.2168, 0.00940245, 0.0493555, 0.00998273, 4.21679, 0.0495683, -0.0492412, 0.0496816, -4.21652, 185.816, 2.89872, 270.772)
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="StaticBody3D2"]
+transform = Transform3D(1, -9.31323e-10, 0, 0, 1, -2.32831e-10, -3.72529e-09, 1.38971e-09, 1, -149.294, 0.36151, -2.42876)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2/StaticBody3D3"]
+
+[node name="building_01" parent="StaticBody3D2/StaticBody3D3" instance=ExtResource("4_l1b4j")]
+transform = Transform3D(-4.2168, 0.00940245, 0.0493555, 0.00998273, 4.21679, 0.0495683, -0.0492412, 0.0496816, -4.21652, 185.816, 2.89872, 270.772)
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="StaticBody3D2"]
+transform = Transform3D(0.999999, -1.86265e-09, 0, 2.32831e-10, 0.999999, -2.32831e-10, -9.31323e-09, 2.31739e-09, 1, 152.674, 1.21411, -131.944)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2/StaticBody3D4"]
+
+[node name="building_01" parent="StaticBody3D2/StaticBody3D4" instance=ExtResource("4_l1b4j")]
+transform = Transform3D(-4.2168, 0.00940245, 0.0493555, 0.00998273, 4.21679, 0.0495683, -0.0492412, 0.0496816, -4.21652, 185.816, 2.89872, 270.772)
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="StaticBody3D2"]
+transform = Transform3D(1, -1.39698e-09, 0, 0, 1, -2.32831e-10, -5.58794e-09, 1.38607e-09, 1, 147.21, 2.98659, -281.352)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2/StaticBody3D5"]
+
+[node name="building_01" parent="StaticBody3D2/StaticBody3D5" instance=ExtResource("4_l1b4j")]
+transform = Transform3D(-4.2168, 0.00940245, 0.0493555, 0.00998273, 4.21679, 0.0495683, -0.0492412, 0.0496816, -4.21652, 185.816, 2.89872, 270.772)
+
 [node name="StaticBody3D3" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3"]
 
 [node name="building_02" parent="StaticBody3D3" instance=ExtResource("5_yoeiy")]
 transform = Transform3D(3.24669, -1.76951e-08, 6.70552e-08, -4.65661e-09, 4.88071, -5.49189e-08, -1.49012e-08, 8.13161e-08, 4.24949, -293.103, -2.80002, 293.127)
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D4"]
+
+[node name="wooden watch tower" parent="StaticBody3D4" instance=ExtResource("6_s5x08")]
+transform = Transform3D(8.74779, -3.35276e-08, 0, -1.86265e-08, 15.3235, -9.3627e-08, -1.3411e-07, 1.08266e-07, 8.31979, 267.246, -11.2278, -213.205)
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D5"]
+
+[node name="building_03" parent="StaticBody3D5" instance=ExtResource("7_k50h2")]
+transform = Transform3D(19.4176, -1.3411e-07, 7.7486e-07, -2.23517e-08, 49.8362, -3.9232e-07, -1.19209e-07, 3.49944e-07, 43.5834, -276.544, 69.9888, -254.916)
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="StaticBody3D5"]
+transform = Transform3D(1, -1.39698e-09, 0, 0, 1, -2.32831e-10, -5.58794e-09, 1.38607e-09, 1, -3.87147, -7.73629, 236.826)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D5/StaticBody3D5"]
+
+[node name="building_03" parent="StaticBody3D5/StaticBody3D5" instance=ExtResource("7_k50h2")]
+transform = Transform3D(19.4176, -1.3411e-07, 7.7486e-07, -2.23517e-08, 49.8362, -3.9232e-07, -1.19209e-07, 3.49944e-07, 43.5834, -276.544, 69.9888, -254.916)
+
+[node name="StaticBody3D6" type="StaticBody3D" parent="StaticBody3D5"]
+transform = Transform3D(1, -4.65661e-10, 0, 0, 1, -2.32831e-10, -1.86265e-09, 4.62023e-10, 1, 422.519, -1.02311, 6.87365)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D5/StaticBody3D6"]
+
+[node name="building_03" parent="StaticBody3D5/StaticBody3D6" instance=ExtResource("7_k50h2")]
+transform = Transform3D(19.4176, -1.3411e-07, 7.7486e-07, -2.23517e-08, 49.8362, -3.9232e-07, -1.19209e-07, 3.49944e-07, 43.5834, -276.544, 69.9888, -254.916)
+
+[node name="StaticBody3D7" type="StaticBody3D" parent="StaticBody3D5"]
+transform = Transform3D(1, -4.65661e-10, 0, 0, 1, -2.32831e-10, -1.86265e-09, 4.62023e-10, 1, 207.754, -0.503067, 3.37979)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D5/StaticBody3D7"]
+
+[node name="building_03" parent="StaticBody3D5/StaticBody3D7" instance=ExtResource("7_k50h2")]
+transform = Transform3D(19.4176, -1.3411e-07, 7.7486e-07, -2.23517e-08, 49.8362, -3.9232e-07, -1.19209e-07, 3.49944e-07, 43.5834, -276.544, 69.9888, -254.916)
+
+[node name="StaticBody3D8" type="StaticBody3D" parent="StaticBody3D5"]
+transform = Transform3D(1, -1.39698e-09, 0, 0, 1, -2.32831e-10, -5.58794e-09, 1.38607e-09, 1, 172.815, -6.07002, 482.495)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D5/StaticBody3D8"]
+
+[node name="building_03" parent="StaticBody3D5/StaticBody3D8" instance=ExtResource("7_k50h2")]
+transform = Transform3D(19.4176, -1.3411e-07, 7.7486e-07, -2.23517e-08, 49.8362, -3.9232e-07, -1.19209e-07, 3.49944e-07, 43.5834, -276.544, 69.9888, -254.916)
+
+[node name="StaticBody3D6" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D6"]
+
+[node name="Gate Only" parent="StaticBody3D6" instance=ExtResource("8_5824q")]
+transform = Transform3D(-0.137346, -0.00232505, -0.364218, 0.00048852, 0.206473, -0.00978125, -0.133873, 0.00313877, 0.373631, 227.106, 114.377, -401.381)
 
 [editable path="CharacterBody3D/player_20"]
