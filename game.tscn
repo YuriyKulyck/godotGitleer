@@ -66,7 +66,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 350.689, 2.98283, 0)
 script = ExtResource("1_8nwgt")
 
 [node name="player_20" parent="CharacterBody3D" instance=ExtResource("2_8ihjr")]
-transform = Transform3D(2.45293, -2.32831e-09, 1.11759e-08, -1.39698e-09, 2.57841, -5.94446e-09, -1.11759e-08, 5.6607e-09, 2.40812, -337.435, 8.35153, -82.4602)
+transform = Transform3D(2.45293, -2.79397e-09, 1.49012e-08, -1.39698e-09, 2.57841, -7.81438e-09, -1.49012e-08, 7.47241e-09, 2.40812, -337.442, 5.38215, -82.4952)
 
 [node name="Skeleton3D" parent="CharacterBody3D/player_20/Armature" index="0"]
 bones/1/position = Vector3(-0.207858, -0.298132, 0.509158)
@@ -83,6 +83,9 @@ bones/7/rotation = Quaternion(0.866742, -0.215005, -0.436129, -0.111011)
 [node name="Cube" parent="CharacterBody3D/player_20/Armature/Skeleton3D" index="0"]
 transform = Transform3D(-0.31205, 0.000997176, 0.000585299, 0.00388041, 0.0817973, 0.00245859, -0.00231375, 0.00269589, -0.0748139, 0.10449, -0.495032, 0.751089)
 
+[node name="Sphere" parent="CharacterBody3D/player_20/Armature/Skeleton3D" index="5"]
+transform = Transform3D(1, 2.32831e-10, -1.86265e-09, -2.32831e-10, 1, 4.83851e-10, 0, 1.63709e-10, 1, -0.00057888, -0.246882, -0.00311661)
+
 [node name="RayCast3D" type="RayCast3D" parent="CharacterBody3D"]
 transform = Transform3D(1, -9.31323e-10, 0, 0, 1, -2.32831e-10, -3.72529e-09, 1.38971e-09, 1, -511.79, 10.0886, -246.463)
 
@@ -96,7 +99,7 @@ shape = SubResource("CapsuleShape3D_7sysb")
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="gde_moya_bugatti" parent="StaticBody3D" instance=ExtResource("3_vut4d")]
-transform = Transform3D(0.23896, 1.39698e-09, 1.78517, 3.55067e-09, 2.01601, 0, -1.87812, 4.1473e-10, 0.227134, 26.162, 5.58244, -129.02)
+transform = Transform3D(0.23896, 1.39698e-09, 1.78517, 4.71482e-09, 2.01601, 0, -1.87812, 1.86992e-09, 0.227134, 26.1519, 1.07431, -129.073)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(0.23896, 1.58325e-08, 1.78517, 1.74623e-09, 2.01601, 9.31323e-10, -1.87812, -3.40318e-07, 0.227134, 27.0583, 11.9482, -129.123)
