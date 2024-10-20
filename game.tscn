@@ -84,13 +84,13 @@ bones/7/rotation = Quaternion(0.866742, -0.215005, -0.436129, -0.111011)
 transform = Transform3D(-0.31205, 0.000997176, 0.000585299, 0.00388041, 0.0817973, 0.00245859, -0.00231375, 0.00269589, -0.0748139, 0.10449, -0.495032, 0.751089)
 
 [node name="RayCast3D" type="RayCast3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 6, 2)
+transform = Transform3D(1, -9.31323e-10, 0, 0, 1, -2.32831e-10, -3.72529e-09, 1.38971e-09, 1, -511.79, 10.0886, -246.463)
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
 transform = Transform3D(-4.28408e-08, -1.62981e-09, -1, -1.45519e-10, 1, -9.77889e-09, 1, -4.05525e-08, -8.00937e-08, -364.899, 21.9646, -82.6081)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8063, 5.62271, 0.529592)
+transform = Transform3D(1, -1.62981e-09, 0, 2.32831e-10, 1, -2.32831e-10, -7.45058e-09, 2.31739e-09, 1, -339.514, 7.37965, -83.9959)
 shape = SubResource("CapsuleShape3D_7sysb")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -197,4 +197,26 @@ shape = SubResource("BoxShape3D_4e4mu")
 [node name="Gate Only" parent="StaticBody3D6" instance=ExtResource("8_5824q")]
 transform = Transform3D(-0.134731, -0.00238233, -0.33481, 0.000479219, 0.211559, -0.00899149, -0.131324, 0.00321609, 0.343463, 226.937, 114.256, -391.041)
 
+[node name="CharacterBody3D2" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, -4.65661e-10, 0, 0, 1, -2.32831e-10, -1.86265e-09, 4.62023e-10, 1, 0.0759847, 34.077, 0.401488)
+
+[node name="player_20" parent="CharacterBody3D2" instance=ExtResource("2_8ihjr")]
+transform = Transform3D(2.45293, -2.32831e-09, 1.11759e-08, -1.39698e-09, 2.57841, -5.94446e-09, -1.11759e-08, 5.6607e-09, 2.40812, -337.435, 8.35153, -82.4602)
+
+[node name="Skeleton3D" parent="CharacterBody3D2/player_20/Armature" index="0"]
+bones/1/position = Vector3(-0.207858, -0.298132, 0.509158)
+bones/1/rotation = Quaternion(-0.520607, 0.005084, 0.853609, -0.017171)
+bones/2/rotation = Quaternion(-0.592121, -0.0177914, 0.286173, 0.753115)
+bones/3/position = Vector3(-0.202326, -0.309637, -0.429763)
+bones/3/rotation = Quaternion(-0.519712, -0.0426272, 0.853251, 0.00672133)
+bones/5/position = Vector3(0.19285, 0.350152, -0.807382)
+bones/6/position = Vector3(0.165362, 0.352419, 0.884157)
+bones/6/rotation = Quaternion(-0.518744, 0.129793, 0.837698, -0.110998)
+bones/7/position = Vector3(-0.108788, -0.212306, 0.768444)
+bones/7/rotation = Quaternion(0.866742, -0.215005, -0.436129, -0.111011)
+
+[node name="Cube" parent="CharacterBody3D2/player_20/Armature/Skeleton3D" index="0"]
+transform = Transform3D(-0.31205, 0.000997176, 0.000585299, 0.00388041, 0.0817973, 0.00245859, -0.00231375, 0.00269589, -0.0748139, 0.10449, -0.495032, 0.751089)
+
 [editable path="CharacterBody3D/player_20"]
+[editable path="CharacterBody3D2/player_20"]

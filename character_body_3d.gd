@@ -7,9 +7,9 @@ const JUMP_VELOCITY = 45.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-@onready var anima_player = $player_20
+@onready var anima_player = $player_20/AnimationPlayer
 
-@onready var bullet_gun = load("res://bullet.tscn")
+@onready var bullet_gun = load("res://bulshit.tscn")
 @onready var ray = $RayCast3D
 
 var GUN = false
@@ -45,16 +45,12 @@ func _ready():
 	
 
 func _input(event):
-	if event is  InputEventMouseMotion:
-		rot_y -= event.relative.x * rot
-		rot_x -= event.relative.y * rot
-		transform.basis = Basis(Vector3(0,1,0), rot_y)
 		
-	if Input.is_action_just_pressed("ArmatureAction"):
+	if Input.is_action_just_pressed("get_gun"):
 		anima_player.play("ArmatureAction")
 		GUN = true
 		
-	if Input.is_action_just_pressed("shoot") and GUN == true:
+	if Input.is_action_just_pressed("shot") and GUN == true:
 		var inst = bullet_gun.instantiate()
 		inst.position = ray.global_position
 		#inst.transform.basis = ray.global_transform.basis
